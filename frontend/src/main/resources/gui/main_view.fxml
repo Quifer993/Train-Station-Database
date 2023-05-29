@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gui.controllers.MainController">
+   <children>
+      <SplitPane dividerPositions="0.2" VBox.vgrow="ALWAYS">
+         <items>
+            <VBox prefHeight="200.0" prefWidth="400.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <Label text="Меню навигации">
+                     <VBox.margin>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Accordion>
+                    <panes>
+                      <TitledPane text="Основные таблицы">
+                           <content>
+                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                                 <children>
+                                    <Button fx:id="WorkButton1" layoutX="20.0" layoutY="55.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openBrigades" text="Бригады" />
+                                    <Button fx:id="Button1" layoutX="24.0" layoutY="24.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openStationWorkers" text="Работники" />
+                                    <Button fx:id="Button11" layoutX="20.0" layoutY="50.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openPassengers" text="Пассажиры" />
+                                    <Button fx:id="WorkButton2" layoutX="20.0" layoutY="55.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openConnectionBrigadeWorkers" text="Работники в бригаде" textOverrun="CLIP" />
+                                    <Button fx:id="WorkButton21" layoutX="20.0" layoutY="80.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openMedicalExamination" text="Мед комиссия" textOverrun="CLIP" />
+                                    <Button fx:id="WorkButton22" layoutX="20.0" layoutY="80.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openConnectionRouteStation" text="Связь станция - маршрут" textOverrun="CLIP" />
+                                    <Button fx:id="WorkButton211" layoutX="20.0" layoutY="111.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openPreparationWorkers" text="Подготовка состава" textOverrun="CLIP" />
+                                    <Button fx:id="WorkButton2111" layoutX="20.0" layoutY="172.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openTrains" text="Поезда" textOverrun="CLIP" />
+                                    <Button fx:id="WorkButton21111" layoutX="20.0" layoutY="232.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openFlight" text="Рейсы" textOverrun="CLIP" />
+                                    <Button fx:id="WorkButton211111" layoutX="20.0" layoutY="263.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openTickets" text="Билеты" textOverrun="CLIP" />
+                                 </children>
+                              </VBox>
+                           </content>
+                      </TitledPane>
+                        <TitledPane layoutX="10.0" layoutY="10.0" text="Статусы">
+                           <content>
+                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                                 <children>
+                                    <Button fx:id="departmentButton11" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openStatusPassengers" text="Типы пассажиров" />
+                                    <Button fx:id="departmentButton1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openStatusTrain" text="Типы поездов" textAlignment="CENTER">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="departmentButton12" layoutX="20.0" layoutY="50.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openStatusOperability" text="Работоспособность" textAlignment="CENTER" />
+                                    <Button fx:id="departmentButton121" layoutX="20.0" layoutY="80.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openStatusPreparation" text="Статус подготовки" textAlignment="CENTER" />
+                                    <Button fx:id="departmentButton1211" layoutX="20.0" layoutY="111.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openStatusFlights" text="Статус рейса" textAlignment="CENTER" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane layoutX="10.0" layoutY="36.0" text="Неизменяемые">
+                           <content>
+                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                                 <children>
+                                    <Button fx:id="WorkButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openWork" text="Профессии" />
+                                    <Button fx:id="departmentButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openDepartment" text="Отделы">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="departmentButton2" layoutX="20.0" layoutY="50.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openStations" text="Станции" />
+                                    <Button fx:id="departmentButton21" layoutX="20.0" layoutY="80.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openRoutes" text="Маршруты" />
+                                    <Button fx:id="departmentButton211" layoutX="20.0" layoutY="111.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openTrainDrivers" text="Водители локомотивов" />
+                                    <Button fx:id="departmentButton12111" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openTrainComplexes" text="Комплексы поезда" textAlignment="CENTER" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </VBox>
+            <TabPane fx:id="contentTabPane">
+               <tabs>
+                  <Tab fx:id="defaultTab" closable="false" text="Главный экран">
+                     <content>
+                        <VBox alignment="CENTER" maxWidth="1.7976931348623157E308">
+                           <children>
+                              <Label text="Добро пожаловать в информационную систему жд станции.&#10;Воспользуйтесь меню навигации для получения&#10;необходимой информации" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Italic" size="17.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+         </items>
+      </SplitPane>
+      <Label fx:id="statusBarLabel" VBox.vgrow="NEVER" />
+   </children>
+</VBox>

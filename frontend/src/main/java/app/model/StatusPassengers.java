@@ -1,0 +1,48 @@
+package app.model;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+@Getter @Setter
+public class StatusPassengers extends Entity {
+
+    private String nameStatus;
+    private Integer discount;
+
+
+    @Override
+    public StatusPassengers clone() {
+        return (StatusPassengers) super.clone();
+    }
+
+    @Override
+    public void calculateProperties() {
+        super.calculateProperties();
+    }
+
+    private static final Map<String, String> propertyNames = new LinkedHashMap<>();
+    private static final Map<String, String> sortPropertyNames = new HashMap<>();
+
+    static {
+        propertyNames.putAll(Entity.getPropertyNames());
+        propertyNames.put("nameStatus", "Статус");
+        propertyNames.put("discount", "Скидка");
+
+        sortPropertyNames.putAll(Entity.getSortPropertyNames());
+        sortPropertyNames.put("nameStatus", "Статус");
+        sortPropertyNames.put("discount", "Скидка");
+    }
+
+    public static Map<String, String> getPropertyNames() {
+        return Collections.unmodifiableMap(propertyNames);
+    }
+
+    public static Map<String, String> getSortPropertyNames() {
+        return Collections.unmodifiableMap(sortPropertyNames);
+    }
+}
